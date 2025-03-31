@@ -1,0 +1,62 @@
+anamalala-api/
+├── cmd/
+│   └── api/
+│       └── main.go
+├── internal/
+│   ├── config/
+│   │   └── config.go
+│   ├── models/
+│   │   ├── user.go
+│   │   ├── post.go
+│   │   ├── information.go
+│   │   ├── comment.go
+│   │   ├── suggestion.go
+│   │   └── notification.go
+│   ├── handlers/
+│   │   ├── auth.go
+│   │   ├── user.go
+│   │   ├── information.go
+│   │   ├── chatroom.go
+│   │   ├── suggestion.go
+│   │   ├── admin.go
+│   │   └── notification.go
+│   ├── repositories/
+│   │   ├── mongodb/
+│   │   │   ├── client.go
+│   │   │   ├── user_repository.go
+│   │   │   ├── post_repository.go
+│   │   │   ├── information_repository.go
+│   │   │   ├── comment_repository.go
+│   │   │   ├── suggestion_repository.go
+│   │   │   └── notification_repository.go
+│   │   └── interfaces/
+│   │       ├── user_repository.go
+│   │       ├── post_repository.go
+│   │       ├── information_repository.go
+│   │       ├── comment_repository.go
+│   │       ├── suggestion_repository.go
+│   │       └── notification_repository.go
+│   ├── services/
+│   │   ├── auth_service.go
+│   │   ├── user_service.go
+│   │   ├── information_service.go
+│   │   ├── chatroom_service.go
+│   │   ├── suggestion_service.go
+│   │   ├── admin_service.go
+│   │   └── notification_service.go
+│   ├── middlewares/
+│   │   ├── auth_middleware.go
+│   │   ├── admin_middleware.go
+│   │   └── logger_middleware.go
+│   └── utils/
+│       ├── password.go
+│       ├── token.go
+│       ├── response.go
+│       └── validator.go
+├── pkg/
+│   ├── logger/
+│   │   └── logger.go
+│   └── sms/
+│       └── sms.go
+├── go.mod
+└── go.sum
