@@ -133,8 +133,10 @@ func main() {
 
 	// Iniciar servidor em uma goroutine separada
 	go func() {
+		certFile := "/etc/letsencrypt/live/freesexy.net/fullchain.pem"
+		keyFile := "/etc/letsencrypt/live/freesexy.net/privkey.pem"
 		appLogger.Info("Servidor HTTP iniciado na porta 8080")
-		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		if err := server.ListenAndServeTLS(certFile, keyFile); err != nil && err != http.ErrServerClosed {
 			appLogger.Fatal("Erro ao iniciar servidor:", err)
 		}
 	}()
