@@ -33,7 +33,10 @@ func (r *UserRepository) Create(ctx context.Context, user models.User) error {
 		user.Role = models.RoleUser
 	}
 	user.Active = true
-	_, err := r.collection.InsertOne(ctx, user)
+	opts := options.Update().SetUpsert(true)
+	filter := bson.M{"contact": user.Contact}
+	update := bson.M{"$set": user}
+	_, err := r.collection.UpdateOne(ctx, filter, update, opts)
 	return err
 }
 
